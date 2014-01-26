@@ -9,7 +9,7 @@ class SContinuation extends SObject {
     def SList currentList // 当前处在哪个指令
     def int currentPos = -1 // 当前处在list的哪个位置
 
-    def static SContinuation loadFromList(SList codeList) {
+    public static SContinuation loadFromList(SList codeList) {
         SContinuation cont = new SContinuation()
         cont.commands = codeList
         cont.currentList = cont.commands
@@ -77,13 +77,13 @@ class SContinuation extends SObject {
 
     def SList nextToCall() {
         // 下一个调用
-        // TODO
+        // TODO: 目前没有使用
         return null
     }
 
     def boolean eof() {
         // TODO
-        return false
+        return true
     }
 
     /**

@@ -50,12 +50,12 @@ class Scheme {
     }
 
     public SObject run(List<SObject> code) {
-        return run(Scheme.getInitEnv(), SContinuation.loadFromList(code))
+        return run(getInitEnv(), SContinuation.loadFromList(SList.create(code)))
     }
 
     public SObject run(SEnv env, SContinuation cont) {
         SchemeState state = new SchemeState(env, cont, SObject.NIL)
         state = runStateMachine(state)
-        return state.last
+        return state != null ? state.last : null
     }
 }
