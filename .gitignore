@@ -1,4 +1,9 @@
 .idea/workspace.xml
 out/
 *~
+*.class
 
+# Package Files #
+*.jar
+*.war
+*.ear
